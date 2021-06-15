@@ -21,22 +21,23 @@ moneyTune.volume = 0.3;
 const textContainer = document.getElementById("main-text");
 textContainer.innerText = intro;
 
-const buttonsContainer = document.getElementById("buttons-container");
+// const buttonsContainer = document.getElementById("buttons-container");
 let singleButton = document.getElementById("single-choice-button");
 
 function startGame() {
     backgroundTune.play();
     singleButton.innerText = "Partiu?"
+    singleButton = document.getElementById("single-choice-button")
     textContainer.innerText = intro;
+    
 }
 
 function gameBegin() {
     regularPerson.savings = 20000
     regularPerson.health = 100
     textContainer.innerText = "Como ja dizia o grande poeta Marcelo D2..'O jogo comecou, aperta o Start' Boa sorte!"
-    //singleButton
     buttonsContainer.innerHTML +=
-    '<button id="single-button" class"single-choice"></button>'
+    '<button id="single-choice-button" class"choice-buttons"></button>'
     singleButton = document.getElementById("single-choice-button")
     singleButton.innerText = "Start"
     singleButton.addEventListener("click", () => {
@@ -47,6 +48,19 @@ function gameBegin() {
 
 function gameLoop() {
     regularPerson.printCurrentStatus();
+    const theGameWillEnd = regularPerson.isRegularPersonOver();
+    if (theGameWillEnd[0] == -1 && theGameWillEnd[1] == -1) {
+        const randomGame = GameArray[Math.floor(Math.random() * GameArray.length)];
+        textContainer.innerText = GameArray[2];
+        singleButton.innerText = "Jogue o dado";
+        singleButton.onclick = () => {
+            regularPerson.updateRegularPerson(randomGame.singleButtonEffect);
+            regularPerson.printCurrentStatus();
+            gameLoop()
+        };
+    } else {
+        theGameWillEnd[0] != -1 ? gameOver(theGameWillEnd[0]) : gameOver(theGameWillEnd[1]);
+    }
     
 }
 
@@ -72,3 +86,23 @@ function gameOver (death) {
         continueGame();
     })
 }
+
+function continueGame() {
+    deathTune.pause();
+    backgroundTune.play();
+    gameInitialLoop();
+}
+
+singleButton.addEventListener("click", () => {
+    clickCounter++;
+
+    if(clickCounter == 1) {
+        startGame();
+    } else if (clickCounter == 2) {
+        textContainer.innerText = caracter;
+        singleButton.innerText = "Start";
+    } else {
+        gameInitialLoop();
+
+    }
+})
