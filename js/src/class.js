@@ -1,10 +1,9 @@
 
-class board {
+class Board {
     constructor() {
         this.savingsHTMLNode = document.getElementById("savings");
         this.healthHTMLNode = document.getElementById("health");
-        this.savings = 20000;
-        this.health = 100;
+        this.savings = 10000;
         this.position = 0
         this.dice = 0
     }
@@ -15,25 +14,27 @@ class board {
     }
 
     printCurrentStatus() {
-        this.savingsHTMLNode.innerText = `Poupanca: ${this.savings}`;
-        this.healthHTMLNode.innerText = `Vida: ${this.health}`;
-        this.position
+        this.savingsHTMLNode.innerText = `Poupanca: R$${this.savings}`;
+        // this.healthHTMLNode.innerText = `Vida: ${this.health}`;
+        // this.positionHTMLNode.innerText = 
     }
     playing() {
         this.printCurrentStatus()
-        this.rollDice
+        this.rollDice()
         this.position += this.dice
-        textContainer.innerText = gameArray[this.position + 1][0]
-        textContainer.innerText = gameArray[this.position + 1][3]
-        this.savings = this.savings + gameArray[this.position + 1][1][1]
-        this.health = this.health + gameArray[this.position + 1][1][2]
-        singleButton.innerText = "Jogue o dado"
+        if(this.position < gameArray.length) {
+            const textContainer = document.getElementById("main-text")
+            textContainer.innerText = gameArray[this.position - 1][0] + "\n"
+            this.savings = this.savings + gameArray[this.position - 1][1][0]
+            singleButton.innerText = "Jogue o dado"
 
+        }
 
     }
 
     isBoardOver() {
-        if(this.savings < 0 || this.health <= 0) {
+        // if(this.savings < 0 || this.health <= 0) 
+        if(this.savings < 0) {
             gameOver()
 
         }

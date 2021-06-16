@@ -2,15 +2,16 @@
 
 body {
   /* background-color: red; */
-  background-image:url("../img/scavone.jpg");
+  background-image:url("../img/rio.jpeg");
   background-size: cover;
   position: relative;
   height: 100vh;
   width: 100vw;
   margin: 0 auto;
+  bottom: 30px;
   padding: 1em;
-  max-width: 60em;
-  font-family:'Times New Roman', Times, serif, cursive;
+  max-width: 50em;
+  font-family:initial, cursive;
   line-height: 1.5;
   color: #211102;
   display: flex;
@@ -19,7 +20,8 @@ body {
 }
 
 .game-title {
-  color: black;
+  color:black;
+  font-family: fantasy;
   text-align: center;
   text-decoration: solid;
 }
@@ -27,9 +29,9 @@ body {
 /* Game Container */
 
 .story-container {
-  background-color: orange;
-  height: 300px;
-  width: 50%;
+  background-color: none;
+  height: 200px;
+  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,20 +42,20 @@ body {
 
 .status-container {
   width: 100%;
-  height: 60px;
+  height: 10px;
   text-align: center;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  background-color:orange;
-  color: orange;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  background-color: none;
+  color: black;
   word-break: break-all;
 }
 
 .status-container ul {
   list-style: none;
-  display: flex;
+  /* display: flex; */
   justify-content: space-around;
-  align-items: baseline;
+  align-items: center;
   flex-wrap: wrap;
   padding-top: 1em;
   padding-bottom: 1em;
@@ -70,9 +72,9 @@ body {
   justify-content: space-evenly;
   align-items: center;
   text-align: justify;
-  padding-top: 5em;
-  padding-left: 3em;
-  padding-right: 3em;
+  padding-top: 1em;
+  padding-left: 2em;
+  padding-right: 2em;
   margin-bottom: 10%;
   /* word-break: break-all; */
 }
@@ -102,40 +104,40 @@ body {
   /* transition: transform 2s;
 } */
 
-.single-choice-fade {
+/* .single-choice-fade {
   z-index: 10;
   -webkit-transition: opacity 2s; /* Safari */
-  transition: opacity 2s;
-}
+  /* transition: opacity 2s;
+} */ */
 
-.animateToRight {
+/* .animateToRight {
   -webkit-transform: translate(100px); /* Safari */
-  transform: translate(100px);
-}
-.animateToLeft {
-  -webkit-transform: translate(-100px); /* Safari */
+  /* transform: translate(100px);
+} */ */
+/* .animateToLeft {
+  -webkit-transform: translate(-100px); Safari
   transform: translate(-100px);
-} 
+}  */
 
-.choice-buttons {
-  background-color: black;
-  color: #ffd700;
+/* .choice-buttons {
+  background-color: none;
+  color: none;
   padding: 15px 32px;
   text-align: center;
   font-size: 16px;
   width: 40%;
   height: 80%;
-}
+} */
 
-.choice-buttons-container {
-  background-color: orange;
+/* .choice-buttons-container {
+  background-color: none;
   width: 100%;
   height: 100px;
   margin-bottom: 7%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-}
+} */
 
 /* input placeholder */
 
@@ -168,3 +170,62 @@ body {
   font-size: 1rem;
   color: #9b9b9b;
 } */
+
+.dice { /* HTML symbols */
+    font-size: 100px;
+    font-weight: 800;
+    background-color: orange;
+    
+  }
+  
+  .dice::after {
+    content:'';
+    animation: rolling 6s linear infinite;
+    background-color: orange;
+  }
+  
+  @keyframes rolling {
+    0% {content:'\2680';}
+    20% {content:'\2681';}
+    40% {content:'\2682';}
+    60% {content:'\2683';}
+    80% {content:'\2684';}
+    100% {content:'\2685';}
+  }
+  
+  /* .game-board{ 
+    display: grid;
+    grid-template-columns: 20px 120px 120px 120px 120px 20px 
+    grid-template-rows: 20px 120px 120px 120px 120px 20px;
+    justify-content: center;
+   }
+
+   .box {
+    background-color: #d9d9d9;
+    border: 2px solid black;
+   }
+
+   .wall{
+    background-color:black;
+  } */
+
+  td {
+    background-color:grey;
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    
+}
+
+  .blank {
+    background-color: transparent ;
+}
+
+  .piece {
+    width: 20px;
+    height: 20px;
+    padding: 12px;
+    background-color: grey;
+    border: 1px solid black;
+    border-radius: 50px;
+}
