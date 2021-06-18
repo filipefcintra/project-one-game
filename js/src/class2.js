@@ -35,12 +35,12 @@ class Board {
         document.getElementById(String(oldPosition)).classList.toggle("newpiece")
         document.getElementById(String(this.position)).classList.toggle("newpiece")
         document.getElementById(String(this.position)).classList.toggle("piece")
-        // const textContainer = document.getElementById("main-text")
-        // textContainer.innerText = `Você tirou ${this.dice}\n ${gameArray[this.position - 1][0]}\n\n${gameArray[this.position - 1][2]}`;
+        const textContainer = document.getElementById("main-text")
+        textContainer.innerText = `Você tirou ${this.dice}\n ${gameArray[this.position - 1][0]}\n\n${gameArray[this.position - 1][2]}`;
         if(this.savings < 0) {
             const textContainer = document.getElementById("main-text")
             textContainer.innerText = "Suas economias acabaram. \n \n \n Game Over!"
-            // visibility()
+            visibility()
         } if(this.health <= 0) {
             const textContainer = document.getElementById("main-text")
             textContainer.innerText = "Voce Morreu! \n Game Over"

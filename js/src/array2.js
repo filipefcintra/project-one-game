@@ -15,47 +15,47 @@
       ["Covid 19, crise, seu chefe te deu 2 opcoes. Home Office ou escritorio..",
       "Home Office",
       [-800, 10],
-      "Maravilha! Economiza na comida e transporte, em compensacao gasta uma fortuna de ar condicionado",
+      "Maravilha! Economiza na comida e transporte, em compensacao gasta uma fortuna de ar condicionado. Gastou R$800, mas ganhou 10 de vida.",
       "Escritorio",
-      [-200, -10],
-      "Voce pegou Covid.. Uma semaninha no hospital sem trabalhar"]
+      [-2000, -30],
+      "Voce pegou Covid.. Uma semaninha no hospital sem trabalhar. perde R$2000 e 30 de vida."]
 );
 
     gameArray.push(
       ["Você e sua esposa trabalhando o dia inteiro em casa..Resultado?",
       "Divorcio",
       [-5000, -20],
-      "Uniao de bens..deu ruim. Perdeu R$5.000 e 20 de vida.",
+      "Uniao parcial de bens..deu ruim. Perdeu R$5.000 e 20 de vida.",
       "Ter um filho",
       [-1000, 20],
-      "Filho nao salva casamento, mas da uma despesa..."]
+      "Filho nao salva casamento, mas da uma despesa... Gastou R$1000, mas ganhou 20 de vida."]
     );
     gameArray.push(
       ["Sua mãe completou 60 anos e o plano de saúde dela, que você paga, dobrou de preço.",
       "Vai pro SUS",
       [3000, -10,],
-      "Conseguiu juntar um bom com dinheiro",
+      "Conseguiu juntar um bom com dinheiro. Economizou R$3000 e perdeu 10 de vida.",
       "Mantem o Plano",
       [-1000, +10],
-      "Sua mae tem um tratamento razoavel, mas e uma facada. Gastou1.000"]
+      "Sua mae tem um tratamento razoavel, mas e uma facada. Gastou R$1.000 e ganhou 10 de vida."]
     );
     gameArray.push(
       ["Fim de semana chegando, qual a boa?",
       "Pipoca e Netflix",
       [-50, 0], 
-      "R$50 pilha de doces. Gastou R50,00",
+      "Gastou R$50 bozos de doces.",
       "Noitadinha com os amigos",
       [-200, -10],
-      "Sair com os amigos nunca eh uma coisa barata. Perde 200 e 110 de vida"]
+      "Sair com os amigos nunca e uma coisa barata. Perde R$200 e 10 de vida"]
     );
     gameArray.push(
       ["Você perdeu o emprego! Cheirinho de rescisão??",
       "Tenta acordo",
       [400, 0],
-      "Receber FGTS. Ganhou R$400",
-      "Sai de uma vez",
+      "Receber compensacao. Ganhou R$400",
+      "Sai logo dessa porra.",
       [0, -10],
-      "Voce era PJ e naso tem direito a nada. Perdeu 10 de vida."]
+      "Voce era PJ sem direito a nada. Perdeu 10 de vida."]
     );
     gameArray.push(
       ["Noitada de rei do camararote! Só diversão! Qual sua vibe?",
@@ -64,7 +64,7 @@
       "Quando bebe acha que eh rico. Gastou R$500.00",
       "Ficar so no sapatinho",
       [-500, -3],
-      "Cineminha, pizza..so pra agradar Perdeu R$60"]
+      "Cineminha, pizza.. Gastou R$60"]
     );
     gameArray.push(
       ["Conheceu uma meninina no tinder",
