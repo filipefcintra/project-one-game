@@ -20,5 +20,7 @@ entre duas opções que vão definir seu futuro.
 Seu objetivo é chegar ao final do mês com pelo menos 1 de vida e não negativar suas financas.
 
 Repositorio: https://github.com/filipefcintra/project-one-game
+
 Site: https://filipefcintra.github.io/project-one-game/
-Apresentação: 
+
+Apresentação: https://slides.com/filipefcintra/deck
