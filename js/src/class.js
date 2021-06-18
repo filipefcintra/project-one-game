@@ -2,7 +2,6 @@
 class Board {
     constructor() {
         this.savingsHTMLNode = document.getElementById("savings");
-        this.healthHTMLNode = document.getElementById("health");
         this.savings = 10000;
         this.position = 1
         this.dice = 0
@@ -31,7 +30,7 @@ class Board {
             document.getElementById(String(this.position)).classList.toggle("newpiece")
             document.getElementById(String(this.position)).classList.toggle("piece")
             const textContainer = document.getElementById("main-text")
-            textContainer.innerText = gameArray[this.position - 1][0] + "\n" + "\n" + gameArray[this.position - 1][2];
+            textContainer.innerText = `Voce tirou ${this.dice}\n ${gameArray[this.position - 1][0]}\n\n${gameArray[this.position - 1][2]}`;
             setTimeout(() => {
                 moneyTune.play()
             },2000)

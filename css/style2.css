@@ -1,164 +1,161 @@
 body {
-    background-color: black;
-    margin: 0 auto;
-    padding: 1em;
-    max-width: 60em;
-    font-family: "MedievalSharp", cursive;
-    line-height: 1.5;
-    color: #211102;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  /* background-color: red; */
+  background-image:url("../img/rio.jpeg");
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  margin: 0 auto;
+  bottom: 30px;
+  padding: 1em;
+  max-width: 50em;
+  font-family:initial, cursive;
+  line-height: 1.5;
+  color: #211102;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-title {
+  color:black;
+  font-family: fantasy;
+  text-align: center;
+  text-decoration: solid;
+  padding-bottom: 5px;
+}
+
+/* Game Container */
+
+/* .story-container {
+  background-color: none;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 50px;
+  margin-bottom: 20px;
+} */
+
+/* Status container */
+
+/* .status-container {
+  width: 100%;
+  height: 10px;
+  text-align: center;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  background-color: none;
+  color: black;
+  word-break: break-all;
+} */
+
+/* .status-container ul {
+  list-style: none;
+  /* display: flex; */
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  padding-left: 0;
+  margin: 0;
+} */
+
+/* decision text */
+
+.decision-text-container {
+  width: 80%;
+  height: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: justify;
+  padding-top: 1em;
+  padding-left: 0em;
+  padding-right: 0em;
+  margin-bottom: 18%;
+  /* word-break: break-all; */
+}
+
+
+
+/* button fading classes */
+/* .hide {
+  opacity: 0;
+} */
+
+
+.dice { /* HTML symbols */
+    font-size: 100px;
+    font-weight: 800;
+    background-color: orange;
+    
   }
   
-  .game-title {
-    color: #ffd700;
+  .dice::after {
+    content:'';
+    animation: rolling 6s linear infinite;
+    background-color: orange;
+  }
+  
+  @keyframes rolling {
+    0% {content:'\2680';}
+    20% {content:'\2681';}
+    40% {content:'\2682';}
+    60% {content:'\2683';}
+    80% {content:'\2684';}
+    100% {content:'\2685';}
+  }
+
+  td {
+    background-color:grey;
+    width: 55px;
+    height: 55px;
     text-align: center;
-    text-decoration: solid;
-  }
+    
+}
+
+  .blank {
+    background-color: transparent ;
+}
+
+  .piece {
+    width: 20px;
+    height: 20px;
+    padding: 12px;
+    background-color: grey;
+    border: 1px solid black;
+    border-radius: 50px;
+}
   
-  /* Game Container */
-  
-  .story-container {
-    background-color: #bda863;
-    height: 600px;
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  /* Status container */
-  
-  .status-container {
-    width: 100%;
-    height: 60px;
-    text-align: center;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    background-color: #211102;
-    color: #d6ceba;
-    word-break: break-all;
-  }
-  
-  .status-container ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    align-items: baseline;
-    flex-wrap: wrap;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    padding-left: 0;
-    margin: 0;
-  }
-  
-  /* decision text */
-  
-  .decision-text-container {
-    width: 80%;
-    height: 40%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: justify;
-    padding-top: 5em;
-    padding-left: 3em;
-    padding-right: 3em;
-    margin-bottom: 10%;
-    /* word-break: break-all; */
-  }
-  
-  /* footer: player info */
-  
-  .player-info {
-    width: 60%;
-    height: 60px;
-    text-align: center;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    background-color: #211102;
-    color: #d6ceba;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  /* button fading classes */
-  .hide {
-    opacity: 0;
-  }
-  
-  /* .multiple-choice-transition {
-    -webkit-transition: -webkit-transform 2s; /* Safari */
-    transition: transform 2s;
-  }
-  
-  .single-choice-fade {
-    z-index: 10;
-    -webkit-transition: opacity 2s; /* Safari */
-    transition: opacity 2s;
-  }
-  
-  .animateToRight {
-    -webkit-transform: translate(100px); /* Safari */
-    transform: translate(100px);
-  }
-  .animateToLeft {
-    -webkit-transform: translate(-100px); /* Safari */
-    transform: translate(-100px);
-  } 
-  
-  .choice-buttons {
-    background-color: black;
-    color: #ffd700;
-    padding: 15px 32px;
-    text-align: center;
-    font-size: 16px;
+  .choice-buttons: {
+    background-color: grey;
+    color: black;
+    padding: 15px 15px;
+    text-align:center;
+    font-size: 14px;
     width: 40%;
-    height: 80%;
-  }
-  
+    height: 100%;
+    display: inline-block
+    
+    
+}
+
   .choice-buttons-container {
-    background-color: #bda863;
+    background-color: transparent;
     width: 100%;
-    height: 100px;
+    height: 50px;
     margin-bottom: 7%;
-    display: flex;
+    display:flex;
     justify-content: space-evenly;
     align-items: center;
+}
+
+  .game-attributes {
+    margin-top: -20px;
+    margin-bottom: 20px;
   }
-  
-  /* input placeholder */
-  
-  .form__group {
-    position: relative;
-  
-    width: 50%;
-    margin-bottom: 50px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .form__field {
-    font-family: inherit;
-    width: 100%;
-    border: 0;
-    border-bottom: 2px solid #9b9b9b;
-    outline: 0;
-    font-size: 1.3rem;
-    color: #9b9b9b;
-    padding: 7px 0;
-    background: transparent;
-  }
-  
-  .form__label {
-    position: absolute;
-    top: 0;
-    display: block;
-    transition: 0.2s;
-    font-size: 1rem;
-    color: #9b9b9b;
-  }
-  
+

@@ -1,24 +1,53 @@
-class Kingdom {
-    constructor() {
-      this.healthHTMLNode = document.getElementById("health");
+class Board {
+  constructor() {
       this.savingsHTMLNode = document.getElementById("savings");
-      this.health = 100;
+      this.healthHTMLNode = document.getElementById("health");
       this.savings = 10000;
-    }
-  
-    updateKingdom(effect) {
-      this.health = Math.min(Math.max(this.health + effect[0], 0), 100);
-      this.savings = Math.min(Math.max(this.savings + effect[3], 0), 100);
-    }
-  
-    printCurrentStatus() {
+      this.health = 100;
+      this.position = 1
+      this.dice = 0
+  }
+
+  rollDice() {
+      this.dice = 1 + Math.floor(Math.random() * 6) 
+      return this.dice
+  }
+
+  formatSavings() {
+      return this.savings.toLocaleString("pt-BR", {style:"currency", currency:"BRL"})
+  }
+
+  visibilitySingle() {
+    document.getElementById("single-choice-button").style.display = "none"
+}
+
+
+  printCurrentStatus() {
+      this.savingsHTMLNode.innerText = `Poupanca: ${this.formatSavings()}`;
       this.healthHTMLNode.innerText = `Saude: ${this.health}`;
-      this.savingsHTMLNode.innerText = `Poupanca: ${this.savings}`;
-    }
-  
-    isKingdomOver() {
-      const status = [this.health, this.savings];
-      return [status.indexOf(0), status.indexOf(100)];
-    }
+  }
+  playingDice() {
+      this.rollDice()
+      const oldPosition = this.position
+      this.position += this.dice
+      document.getElementById(String(oldPosition)).classList.toggle("piece")
+      document.getElementById(String(oldPosition)).classList.toggle("newpiece")
+      document.getElementById(String(this.position)).classList.toggle("newpiece")
+      document.getElementById(String(this.position)).classList.toggle("piece")
+      
+  }
+
+  isBoardOver() {
+      if(this.savings >= 0) {
+          const textContainer = document.getElementById("main-text")
+          textContainer.innerText = "Voce Venceu! Conseguiu sobreviver a loucura carioca sem falir! \n Parabens!!!"
+          visibility()
+      } else {
+          const textContainer = document.getElementById("main-text")
+          textContainer.innerText = "Voce faliu!"
+          singleButton.innerText = "Finalizar"
+          
+          }
   }
   
+};
