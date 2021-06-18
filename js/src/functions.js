@@ -4,9 +4,8 @@ const cells = document.querySelectorAll("td")
 let piece = document.querySelectorAll("p")
 
 
-const intro = "Welcome to Hell de Janeiro! Um lugar adoravel de se viver, mas que precisa de muito jogo de cintura. Voce acha que tem o que eh necessario? Esta preparado para essa aventura?"
-
-const caracter = "Voce eh um cidadao comum de classe media satisfeito com seu emprego. \nTrabalhou duro no ultimo ano e conseguiu fazer uma poupanca de R$10.000.\n Voce eh feliz."
+const intro = "Welcome to Hell de Janeiro! Um lugar adorável de se viver, mas que precisa de muito jogo de cintura. Você acha que tem o que é necessário? Está preparado para essa aventura?"
+const caracter = "Você é um cidadão comum, de classe média, satisfeito com seu emprego. \nTrabalhou duro no último ano e conseguiu fazer uma poupança de R$10.000."
 
 const backgroundTune = new Audio();
 backgroundTune.src = "./sounds/play2.mp3";
@@ -40,14 +39,14 @@ function initialScreen() {
 
 function pressStartScreen() {
     backgroundTune.play();
-    textContainer.innerText = "Seu Objetivo eh chegar ao final sem falir, mas como tudo na vida, isso depende da sua sorte. \nComo ja dizia o grande poeta Marcelo D2..\n'O jogo comecou, aperta o Start'";
+    textContainer.innerText = "Seu objetivo é chegar no final do mês sem falir, mas como tudo na vida, isso depende da sua sorte. \nComo já dizia o grande 'poeta' Marcelo D2..\n'O jogo começou, aperta o Start'.";
     singleButton = document.getElementById("single-choice-button")
     singleButton.innerText = "Start"
 }
 
 function gameStart() {
     backgroundTune.play();
-    board.savingsHTMLNode.innerText = `Poupanca: ${board.formatSavings()}`;
+    board.savingsHTMLNode.innerText = `Poupança : ${board.formatSavings()}`;
     board.savings
     textContainer.innerText = caracter;
     singleButton.innerText = "Jogue o dado";

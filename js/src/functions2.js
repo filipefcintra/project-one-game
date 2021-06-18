@@ -99,11 +99,11 @@ function gameInitialLoop() {
             board.printCurrentStatus()
             leftButton.parentElement.removeChild(leftButton)
             rigthButton.parentElement.removeChild(rigthButton)
-            // buttonsContainer.innerHTML +=
-            // '<button id="single-choice-button" class="choice-buttons"></button>';
-            // let singleButton = document.getElementById("single-choice-button");
-            // singleButton.innerText = "Jogue o dado"
-            // singleButton = document.getElementById("single-choice.button").appendChild(singleButton)
+            buttonsContainer.innerHTML +=
+            '<button id="single-choice-button" class="choice-buttons"></button>';
+            let singleButton = document.getElementById("single-choice-button");
+            singleButton.innerText = "Jogue o dado"
+            singleButton = document.getElementById("single-choice.button").appendChild(singleButton)
             
             
         };
@@ -115,11 +115,11 @@ function gameInitialLoop() {
             board.printCurrentStatus()
             leftButton.parentElement.removeChild(leftButton)
             rigthButton.parentElement.removeChild(rigthButton)
-            // buttonsContainer.innerHTML +=
-            // '<button id="single-choice-button" class="choice-buttons"></button>';
-            // let singleButton = document.getElementById("single-choice-button");
-            // singleButton.innerText = "Jogue o dado"
-            // singleButton = document.getElementById("single-choice.button").appendChild(singleButton)
+            buttonsContainer.innerHTML +=
+            '<button id="single-choice-button" class="choice-buttons"></button>';
+            let singleButton = document.getElementById("single-choice-button");
+            singleButton.innerText = "Jogue o dado"
+            singleButton = document.getElementById("single-choice.button").appendChild(singleButton)
             
         }
    } else {

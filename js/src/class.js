@@ -17,7 +17,7 @@ class Board {
     }
 
     printCurrentStatus() {
-        this.savingsHTMLNode.innerText = `Poupanca: ${this.formatSavings()}`;
+        this.savingsHTMLNode.innerText = `Poupança: ${this.formatSavings()}`;
     }
     playing() {
         this.printCurrentStatus()
@@ -30,7 +30,7 @@ class Board {
             document.getElementById(String(this.position)).classList.toggle("newpiece")
             document.getElementById(String(this.position)).classList.toggle("piece")
             const textContainer = document.getElementById("main-text")
-            textContainer.innerText = `Voce tirou ${this.dice}\n ${gameArray[this.position - 1][0]}\n\n${gameArray[this.position - 1][2]}`;
+            textContainer.innerText = `Você tirou ${this.dice}\n ${gameArray[this.position - 1][0]}\n\n${gameArray[this.position - 1][2]}`;
             setTimeout(() => {
                 moneyTune.play()
             },2000)
@@ -54,11 +54,11 @@ class Board {
     isBoardOver() {
         if(this.savings >= 0) {
             const textContainer = document.getElementById("main-text")
-            textContainer.innerText = "Voce Venceu! Conseguiu sobreviver a loucura carioca sem falir! \n Parabens!!!"
+            textContainer.innerText = "Você venceu! Conseguiu sobreviver à loucura carioca sem falir. \n Parabéns!!!!"
             visibility()
         } else {
             const textContainer = document.getElementById("main-text")
-            textContainer.innerText = "Voce faliu!"
+            textContainer.innerText = "Você faliu!"
             singleButton.innerText = "Finalizar"
             
             }
