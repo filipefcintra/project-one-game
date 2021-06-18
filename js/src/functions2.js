@@ -28,33 +28,6 @@ let singleButton = document.getElementById("single-choice-button");
 let leftButton = document.getElementById("right-choice-button");
 let rigthButton = document.getElementById("left-choice-button");
 
-// function visibilitySingle() {
-//     document.getElementById("single-choice-button").style.display = "none"
-// }
-
-// function visibilitySingleRevert() {
-//     document.getElementById("single-choice-button").style.display = "block"
-// }
-
-// function visibilityDouble() {
-//     buttonsContainer.innerHTML +=
-//     '<button id="right-choice-button" class="choice-buttons"></button>';
-//     buttonsContainer.innerHTML +=
-//     '<button id="left-choice-button" class="choice-buttons"></button>';
-//     document.getElementById("right-choice-button").style.display = "none"
-//     document.getElementById("left-choice-button").style.display = "none"
-// }
-
-// function visibilityDoubleRevert() {
-//     buttonsContainer.innerHTML +=
-//     '<button id="right-choice-button" class="choice-buttons"></button>';
-//     buttonsContainer.innerHTML +=
-//     '<button id="left-choice-button" class="choice-buttons"></button>';
-//     document.getElementById("right-choice-button").style.display = "block"
-//     document.getElementById("left-choice-button").style.display = "block"
-// }
-
-
 // telas
 //function 0 click
 function initialScreen() {
@@ -75,24 +48,46 @@ function gameStart() {
     
 }
 
+let clickCounter = 0
+
+function teste(singleButton) {
+    singleButton.addEventListener("click", () => {
+        if (clickCounter === 0) {
+            pressStartScreen()
+        } else if (clickCounter === 1) {
+          gameStart()
+        } else if (clickCounter === 2) {
+         gameInitialLoop()
+        } else if (clickCounter >= 3) {
+         gameInitialLoop()
+        }
+    clickCounter++
+})
+}
+
 
 function gameInitialLoop() {
+    board.playingDice()
+    let singleButton = document.getElementById("single-choice-button");
+    teste(singleButton)
     // board.playingDice()
-    // visibilitySingle()
-    // visibilityDoubleRevert()
     board.printCurrentStatus()
-    singleButton.parentElement.removeChild(singleButton)
+    console.log(buttonsContainer)
+    buttonsContainer.removeChild(singleButton)
+    console.log(buttonsContainer)
     buttonsContainer.innerHTML +=
     '<button id="right-choice-button" class="choice-buttons"></button>';
     buttonsContainer.innerHTML +=
     '<button id="left-choice-button" class="choice-buttons"></button>';
     leftButton = document.getElementById("right-choice-button");
     rigthButton = document.getElementById("left-choice-button");
-    textContainer.innerText = gameArray[board.position - 1][0]
     leftButton.innerText = gameArray[board.position - 1][1]
     rigthButton.innerText = gameArray[board.position - 1][4]
+    textContainer.innerText = gameArray[board.position - 1][0]
    if (board.savings >= 0 && board.health > 0) {
         leftButton.onclick = () => {
+            // leftButton.innerText = gameArray[board.position - 1][1]
+            // textContainer.innerText = gameArray[board.position - 1][0]
             textContainer.innerText = gameArray[board.position - 1][3]
             board.savings = board.savings + gameArray[board.position - 1][2][0]
             board.health = board.health + gameArray[board.position - 1][2][1]
@@ -103,12 +98,14 @@ function gameInitialLoop() {
             '<button id="single-choice-button" class="choice-buttons"></button>';
             let singleButton = document.getElementById("single-choice-button");
             singleButton.innerText = "Jogue o dado"
-            singleButton = document.getElementById("single-choice.button").appendChild(singleButton)
-            
+            teste(singleButton)
             
         };
 
         rigthButton.onclick = () => {
+            
+            // rigthButton.innerText = gameArray[board.position - 1][4]
+            // textContainer.innerText = gameArray[board.position - 1][0]
             textContainer.innerText = gameArray[board.position - 1][6]
             board.savings = board.savings + gameArray[board.position - 1][5][0]
             board.health = board.health + gameArray[board.position - 1][5][1]
@@ -119,8 +116,7 @@ function gameInitialLoop() {
             '<button id="single-choice-button" class="choice-buttons"></button>';
             let singleButton = document.getElementById("single-choice-button");
             singleButton.innerText = "Jogue o dado"
-            singleButton = document.getElementById("single-choice.button").appendChild(singleButton)
-            
+            teste(singleButton)
         }
    } else {
        if(board.savings < 0) {
@@ -131,8 +127,7 @@ function gameInitialLoop() {
 
    }
    
-   board.playingDice()
-   gameInitialLoop()
+//    board.playingDice()
 
 }
 
@@ -144,7 +139,7 @@ function gameDice() {
 
 
 
-let clickCounter = 0
+
 singleButton.addEventListener("click", () => {
     if (clickCounter === 0) {
         pressStartScreen()
@@ -152,10 +147,9 @@ singleButton.addEventListener("click", () => {
         gameStart()
     } else if (clickCounter === 2) {
         gameInitialLoop()
-    } else if (clickCounter === 3) {
+    } else if (clickCounter >= 3) {
         gameInitialLoop()
     }
-
     clickCounter++
 })
 
